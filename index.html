@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Example</title>
+		<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+	</head>
+	<body>
+
+		<table id="my_table">
+			<thead>
+				<tr>
+					<td>Example</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+			</tbody>
+		</table>
+		<br><br><br>		<br><br><br>
+		<table id="my_table_two">
+			<thead>
+				<tr>
+					<td>Example</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+				<tr>
+					<td>item</td>
+				</tr>
+			</tbody>
+		</table>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="cmh.datatables.wrapper.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			var table1 = cmhDTW.buildTable('my_table', null, false, null, null);
+
+			//this demonstrates the ability to append to the definition in the index variable, as well as override any as well
+			//while setting the table to a defaultFixed height.
+			tabOpts = {};
+			tabOpts.sScrollX = "100%",
+			tabOpts.sScrollXInner = "110%",
+			tabOpts.bScrollCollapse = true
+
+			var table2 = cmhDTW.buildTable('my_table_two', tabOpts, true, null, null);
+		});
+	</script>
+	</body>
+</html>
